@@ -18,7 +18,8 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->text('profile_img');
-            $tabla->enum('user_role',[0,1])->delfault(1);//0-admin ,1-user
+             $table->text('roles_name');
+            $table->enum('user_role',[0,1])->delfault(1);//0-admin ,1-user
             $table->rememberToken();
             $table->timestamps();
         });
