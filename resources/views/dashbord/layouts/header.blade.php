@@ -1,8 +1,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, viewport-fit=cover">
 <!-- font -->
-<link rel="stylesheet" href="fonts/fonts.css">
+<link rel="stylesheet" href="{{asset('assets/fonts/fonts.css')}}">
 <!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
 <link rel="stylesheet" href="{{asset('assets/fonts/font-icons.css')}}">
 <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
 <link rel="stylesheet"type="text/css" href="{{asset('assets/css/nouislider.min.css')}}"/>

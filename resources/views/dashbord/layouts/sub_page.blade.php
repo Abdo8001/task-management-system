@@ -8,6 +8,8 @@
   <!-- font -->
 <link rel="stylesheet" href="fonts/fonts.css">
 <!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
 <link rel="stylesheet" href="{{asset('assets/fonts/font-icons.css')}}">
 <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
 <link rel="stylesheet"type="text/css" href="{{asset('assets/css/nouislider.min.css')}}"/>
@@ -27,7 +29,7 @@
     <!-- preloade -->
     <div class="preload preload-container">
         <div class="logo-img">
-            <img src="images/logo/logo-2.png" alt="logo">
+            <img src="{{ asset('assets/images/logo/logo-2.png') }}" alt="logo">
         </div>
         <div class="spinner-circle lg success">
             <span class="spinner-circle1 spinner-child"></span>

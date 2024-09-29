@@ -1,7 +1,11 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TaskController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\CommentController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProjectController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,11 +22,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/test', function () {
-    return view('dashbord.profile.index');
+    return view('dashbord.layouts.master2');
 });
-
+Route::middleware(['auth',])->group(function () {
+   Route::resource('users', UserController::class); 
+   Route::resource('projects', ProjectController::class);
+   Route::resource('tasks', TaskController::class);
+   Route::resource('comments', CommentController::class);
+   Route::get('task/{id}/', [TaskController::class,'downloadAttachment'])->name('downloadAttachment');
+});
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('dashbord.master');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {

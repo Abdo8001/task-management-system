@@ -13,7 +13,7 @@
     <!-- preloade -->
     <div class="preload preload-container">
         <div class="logo-img">
-            <img src="images/logo/logo-2.png" alt="logo">
+            <img src="{{ asset('assets/images/logo/logo-2.png')}}" alt="logo">
         </div>
         <div class="spinner-circle lg success">
             <span class="spinner-circle1 spinner-child"></span>
@@ -32,11 +32,11 @@
         
             <div class="left">
                 <div class="avt">
-                    <img src="{{asset(' images/avt/avt2.jpg')}}" alt="avatar">
+                    <img src="{{asset(' assets/images/avt/avt2.jpg')}}" alt="avatar">
                     <span class="dot-status"></span>
                 </div>
                 <div class="content">
-                    <h5 class="text-white">Jennifer Lyine</h5>
+                    <h5 class="text-white">{{ Auth::user()->name }}</h5>
                     <p class="body-2 text-white">Hi Jennifer, Good Morning!</p>
                 </div>
             </div>

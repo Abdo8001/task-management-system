@@ -20,14 +20,14 @@ class PermissionTableSeeder extends Seeder
     $teamMemberRole = Role::create(['name' => 'Team Member']);
 
     // Create Permissions
-    $permissions = ['create tasks', 'edit tasks', 'assign tasks', 'view tasks'];
+    $permissions = ['create tasks', 'edit tasks', 'assign tasks', 'view tasks','show tasks','create projects','view projects'];
     foreach ($permissions as $permission) {
         Permission::create(['name' => $permission]);
     }
 
     // Assign Permissions to Roles
     $adminRole->givePermissionTo(Permission::all());
-    $managerRole->givePermissionTo(['create tasks', 'edit tasks', 'assign tasks']);
+    $managerRole->givePermissionTo(['create tasks', 'edit tasks', 'assign tasks','show tasks']);
     $teamMemberRole->givePermissionTo('view tasks');
 
     }

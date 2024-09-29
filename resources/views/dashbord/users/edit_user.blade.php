@@ -50,18 +50,20 @@
 
     <div class="app-content style-3 pb-32 signUp-area">
         <div class="tf-container">
-            <form method="post" class="mt-24" action="" enctype="multipart/form-data">
-            @csrf
+            <form method="post" class="mt-24" action="{{ route('users.update',$user->id) }}" enctype="multipart/form-data">
+                @method('put')
+                @csrf
                 <p class="body-6 text-black-5">Give creadential to sign in your account</p>
                 <fieldset class="input-icon mt-20">
                     <span class="icon icon-user"></span>
-                    <input type="text" placeholder="Type your username" name="name"  class="form-control">
+                    <input type="text"  value="{{ $user->name }}"  name="name"  class="form-control">
+         <input type="hidden" name="id" value="{{ $user->id }}">
                     <x-input-error :messages="$errors->get('name')" class="mt-2 btn btn-danger" />
 
                 </fieldset>
                 <fieldset class="input-icon mt-16">
                     <span class="icon icon-mail"></span>
-                    <input type="text" placeholder="Type your email" name="email" class="form-control">
+                    <input type="text"  value="{{ $user->email }}" name="email" class="form-control">
                     <x-input-error :messages="$errors->get('email')" class="mt-2 btn btn-danger" />
 
                 </fieldset>
@@ -87,15 +89,11 @@
                         <x-input-error :messages="$errors->get('profile_img')" class="mt-2 btn btn-danger" />
                     </div>
                 </fieldset>
-                <fieldset class="cb-signup mt-20">
-                    <input type="checkbox" class="tf-checkbox" id="cb-ip"> 
-                    <label for="cb-ip">I agree to the company <span class="text-primary">Term of Service</span> and <span class="text-primary">Privacy Policy</span> </label>
-                </fieldset>
-                <button class="mt-24 tf-btn primary">Sign Up</button>
+               
+                <button class="mt-24 tf-btn primary">update user</button>
             </form>
         
             
-            <p class="mt-60 text-center body-2 fw-5 text-black-5">Don’t have account?<a href="sign-in.html" class="text-primary fw-7 body-2">sign In</a></p>
         </div>
     </div>
 

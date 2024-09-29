@@ -14,12 +14,13 @@ return new class extends Migration
         Schema::create('tasks', function (Blueprint $table) {
             $table->id();
             $table->foreignId('project_id')->references('id')->on('projects')->onDelete('cascade');
-            $table->foreignId('assigned_to')->nullable()->references('id')->on('users')->onDelete('set null');
+            // $table->foreignId('assigned_to')->nullable()->references('id')->on('users')->onDelete('set null');
             $table->string('title');
             $table->text('description')->nullable();
             $table->text('attachment')->nullable();
             $table->text('task_image')->nullable();
             $table->enum('status', ['Pending', 'In Progress', 'Completed'])->default('Pending');
+            $table->unsignedBigInteger('created_by');
             $table->timestamps();
         });
     }
